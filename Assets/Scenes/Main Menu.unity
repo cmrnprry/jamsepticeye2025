@@ -610,7 +610,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadScreen: {fileID: 365008282}
   text: {fileID: 193461797}
-  progressBar: {fileID: 0}
   TransitionScreen: {fileID: 580331578}
 --- !u!114 &298820740
 MonoBehaviour:
@@ -1480,7 +1479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 529924738733200480, guid: 7928d3b2effd73d4bb84c39bd1036ba6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -463.4085
+      value: -336.135
       objectReference: {fileID: 0}
     - target: {fileID: 529924738733200480, guid: 7928d3b2effd73d4bb84c39bd1036ba6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2427,7 +2426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d070e774bd1af43439fa26164a48f087, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b89e1a14ff804046a55dbc40e0345a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2719,7 +2718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 529924738733200480, guid: 7928d3b2effd73d4bb84c39bd1036ba6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -772.3475
+      value: -560.225
       objectReference: {fileID: 0}
     - target: {fileID: 529924738733200480, guid: 7928d3b2effd73d4bb84c39bd1036ba6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3040,7 +3039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 529924738733200480, guid: 7928d3b2effd73d4bb84c39bd1036ba6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -154.4695
+      value: -112.045
       objectReference: {fileID: 0}
     - target: {fileID: 529924738733200480, guid: 7928d3b2effd73d4bb84c39bd1036ba6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -19,7 +19,7 @@ public class Organ : MonoBehaviour
     public void OrganChosen()
     {
         GameObject m = Instantiate(Maze, this.gameObject.transform.parent.parent);
-
+        m.GetComponent<MazeGameManager>().SetOrgan(type);
         DetermineDifficulty();
     }
 

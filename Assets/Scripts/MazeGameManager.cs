@@ -7,6 +7,7 @@ using DG.Tweening;
 public class MazeGameManager : MonoBehaviour
 {
     private bool TrackBadTouch = false;
+    private Organs organ;
     [SerializeField] private int MaxBadTouch;
     public int CurrentBadTouches;
 
@@ -52,6 +53,11 @@ public class MazeGameManager : MonoBehaviour
             });
     }
 
+    public void SetOrgan(Organs o)
+    {
+        organ = o;
+    }
+
     private void ResetMaze()
     {
         Start_Goal.SetActive(true);
@@ -61,6 +67,7 @@ public class MazeGameManager : MonoBehaviour
     public void SuccessMaze()
     {
         TrackBadTouch = false;
+        GameManager.instance.AddOrganHarvested(organ);
         Debug.Log("Success :(");
     }
 

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TossBody
+  - Fire_Particles
+  - Patient_Parent
   layers:
   - Default
   - TransparentFX
