@@ -10,7 +10,7 @@ public class TransistionsAndLoading : MonoBehaviour
     [Header("Loading Screen")]
     public Image LoadScreen;
     public GameObject text;
-    public Slider progressBar;
+    //public Slider progressBar;
 
     [Header("Transition Screen")]
     public Image TransitionScreen;
@@ -40,7 +40,7 @@ public class TransistionsAndLoading : MonoBehaviour
     {
         yield return new WaitUntil(() => loadingOperation != null);
 
-        progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
+        //progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
 
         if (loadingOperation.isDone)
         {
