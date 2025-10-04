@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class TransistionsAndLoading : MonoBehaviour
 {
+    public static TransistionsAndLoading instance;
+
     [Header("Loading Screen")]
     public Image LoadScreen;
     public GameObject text;
@@ -19,6 +21,10 @@ public class TransistionsAndLoading : MonoBehaviour
 
     void Awake()
     {
+        if (instance == null)
+                instance = this;
+            else
+                Destroy(this.gameObject);
         DontDestroyOnLoad(gameObject);
     }
 

@@ -19,7 +19,7 @@ namespace AYellowpaper.SerializedCollections
         public SerializedDictionary<string, AudioClip> SFXDictionary;
         [SerializeField] private AudioSource SFXSource;
         [SerializeField] private Transform SFXParent;
-        private List<AudioSource> sources = new List<AudioSource>();
+        private List<AudioSource> added_sources = new List<AudioSource>();
 
         private void Awake()
         {
@@ -29,37 +29,33 @@ namespace AYellowpaper.SerializedCollections
                 Destroy(this.gameObject);
 
             DontDestroyOnLoad(gameObject);
+            SFXSource.Stop();
         }
 
-        public void PlaySFX(string src, bool shouldLoop = false, float fadeIn = 0, float delay = 0)
+        public void PlaySFX(string src, float fadeIn = 0, float delay = 0)
         {
-            if (sources.Count > 0)
+            if (SFXDictionary.ContainsKey(src))
             {
-                for (int i = 0; i < sources.Count; i++)
-                {
-                    if (sources[i].isPlaying && i + 1 < sources.Count)
-                        continue;
-                    else if (SFXDictionary.ContainsKey(src))
-                    {
-                        var sfx = Instantiate(SFXSource, SFXParent);
-                        sources.Add(sfx);
-                        sfx.clip = SFXDictionary[src];
-                        sfx.loop = shouldLoop;
-
-                        if (fadeIn > 0 || delay > 0)
-                            StartCoroutine(FadeIn(sfx, fadeIn, delay));
-                        else
-                            sfx.Play();
-                        break;
-                    }
-                }
+                PlaySFX(SFXDictionary[src], fadeIn, delay);
             }
-            else if (SFXDictionary.ContainsKey(src))
+        }
+
+        public void PlaySFX(AudioClip clip, float fadeIn = 0, float delay = 0)
+        {
+            if (!SFXSource.isPlaying)
+            {
+                SFXSource.clip = clip;
+
+                if (fadeIn > 0 || delay > 0)
+                    StartCoroutine(FadeIn(SFXSource, fadeIn, delay));
+                else
+                    SFXSource.Play();
+            }
+            else
             {
                 var sfx = Instantiate(SFXSource, SFXParent);
-                sources.Add(sfx);
-                sfx.clip = SFXDictionary[src];
-                sfx.loop = shouldLoop;
+                added_sources.Add(sfx);
+                sfx.clip = clip;
 
                 if (fadeIn > 0 || delay > 0)
                     StartCoroutine(FadeIn(sfx, fadeIn, delay));
@@ -68,24 +64,29 @@ namespace AYellowpaper.SerializedCollections
             }
         }
 
-        public void StopSFX(string src, float fadeOut = 0, float delay = 0)
+        public void StopSFX(AudioClip src, float delay = 0)
         {
-            for (int i = 0; i < sources.Count; i++)
+            StopSFX(src.name);
+        }
+
+        public void StopSFX(string src, float delay = 0)
+        {
+            if (SFXSource.isPlaying && SFXSource.clip.name == src)
             {
-                if (sources[i].isPlaying && sources[i].loop && sources[i].clip.name == src)
+                SFXSource.Stop();
+            }
+            else
+            {
+                for (int i = 0; i < added_sources.Count; i++)
                 {
-                    if (fadeOut > 0 || delay > 0)
-                        StartCoroutine(FadeOut(sources[i], fadeOut, delay));
-                    else
+                    if (added_sources[i].isPlaying && added_sources[i].clip.name == src)
                     {
-                        sources[i].Stop();
-                        Destroy(sources[i].gameObject);
-                        sources.RemoveAt(i);
-                        break;
+                        added_sources[i].Stop();
+                        Destroy(added_sources[i].gameObject);
+                        added_sources.RemoveAt(i);
+                        return;
                     }
                 }
-                else
-                    continue;
             }
         }
 
@@ -105,7 +106,7 @@ namespace AYellowpaper.SerializedCollections
 
             yield return new WaitForSeconds(duration);
             src.Stop();
-            sources.Remove(src);
+            added_sources.Remove(src);
             Destroy(src.gameObject);
         }
 
