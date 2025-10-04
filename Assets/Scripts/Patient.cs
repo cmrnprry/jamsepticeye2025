@@ -9,7 +9,6 @@ public class Patient : MonoBehaviour
     public List<string> dialogue_leave;
     public List<string> dialogue_surgery;
 
-
     // Start is called before the first frame update
     void Start()
     {

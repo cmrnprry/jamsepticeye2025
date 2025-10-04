@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class MazeGameManager : MonoBehaviour
 {
@@ -9,8 +10,14 @@ public class MazeGameManager : MonoBehaviour
     [SerializeField] private int MaxBadTouch;
     public int CurrentBadTouches;
 
+    [Header("Failure Indicator")]
+    public List<RectTransform> Failure;
+    private float time = .5f;
+
+
     [Header("Start and End Goals")]
-    public GameObject Start_Goal, End_Goal;
+    public GameObject Start_Goal;
+    public GameObject End_Goal;
     public Image Maze;
 
     private void Start()
@@ -24,22 +31,29 @@ public class MazeGameManager : MonoBehaviour
 
     public void BadTouchCollision()
     {
-        if (!TrackBadTouch) { return; }
+        if (!TrackBadTouch)
+        { return; }
 
-        CurrentBadTouches += 1; 
-        if (CurrentBadTouches >= MaxBadTouch)
-        {
-            FailMaze();
-        }
-        else
-        {
-            ResetMaze();
-        }
+        CurrentBadTouches += 1;
+
+        //TODO: play audio
+        TrackBadTouch = false;
+
+        Sequence mySequence = DOTween.Sequence();
+
+        Failure[CurrentBadTouches - 1].DOShakeAnchorPos(1.5f, CurrentBadTouches*2, 10, 30);
+        mySequence.Append(Failure[CurrentBadTouches - 1].DOScale(2, time))
+            .Append(Failure[CurrentBadTouches - 1].DOScale(1, time / 2)).AppendInterval(time).OnComplete(() =>
+            {
+                if (CurrentBadTouches >= MaxBadTouch)
+                    FailMaze();
+                else
+                    ResetMaze();
+            });
     }
 
     private void ResetMaze()
     {
-        TrackBadTouch = true;
         Start_Goal.SetActive(true);
         End_Goal.SetActive(false);
     }

@@ -79,7 +79,8 @@ public class TransistionsAndLoading : MonoBehaviour
         LoadScreen.DOFade(0, 1.5f).OnComplete(() =>
         {
             LoadScreen.gameObject.SetActive(false);
-            //PauseMenu.SetPause(false);
+            PauseMenu.SetPause(false);
+            GameManager.instance.SetDataOnLoad();
         });
 
         print("end scene load");

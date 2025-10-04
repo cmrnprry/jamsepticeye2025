@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public enum Organs { };
+public enum Organs { Heart, Stomach, Pancreas, Ribs, Spine, Liver};
 public enum Characteristics { };
 
 public class GameManager : MonoBehaviour
@@ -22,6 +23,19 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
+    public void SetDataOnLoad()
+    {
+        Button toss = GameObject.FindWithTag("TossBody").GetComponent<Button>();
+        toss.onClick.AddListener(TossBody);
+    }
+
+    private void TossBody()
+    {
+
+    }
+
+
 }
 
 

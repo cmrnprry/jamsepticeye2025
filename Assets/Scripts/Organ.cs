@@ -10,15 +10,17 @@ public class Organ : MonoBehaviour
     //TODO: add difficulty things that turn on depending on day
 
 
-    // Start is called before the first frame update
-    void Start()
+   private void DetermineDifficulty()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void OrganChosen()
     {
-        
+        GameObject m = Instantiate(Maze, this.gameObject.transform.parent.parent);
+
+        DetermineDifficulty();
     }
+
 }
