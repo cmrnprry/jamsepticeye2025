@@ -68,7 +68,7 @@ void Update()
                 entry_index++;
                 if (entry_index >= voice_entries.Count)
                 {
-                    TransistionsAndLoading.instance.StartSceneLoad(next_scene);
+                    TransistionsAndLoading.instance.StartSceneLoad(next_scene, false);
                 }
                 else
                 {

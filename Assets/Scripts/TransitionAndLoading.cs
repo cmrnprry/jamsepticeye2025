@@ -18,13 +18,14 @@ public class TransistionsAndLoading : MonoBehaviour
     public Image TransitionScreen;
 
     private AsyncOperation loadingOperation;
+    private bool loading_cutscene = false;
 
     void Awake()
     {
         if (instance == null)
-                instance = this;
-            else
-                Destroy(this.gameObject);
+            instance = this;
+        else
+            Destroy(this.gameObject);
         DontDestroyOnLoad(gameObject);
     }
 
@@ -64,9 +65,36 @@ public class TransistionsAndLoading : MonoBehaviour
     /// Called when the player clicks a button that warrents loading
     /// </summary>
     /// <param name="scene">string name of the scene we are loading in</param>
-    public void StartSceneLoad(string scene)
+    public void StartCutSceneLoad(string scene)
     {
         print("start scene load");
+        loading_cutscene = true;
+        LoadScreen.gameObject.SetActive(true);
+        LoadScreen.DOFade(1, 1).OnComplete(() =>
+        {
+            text.SetActive(true);
+            StartCoroutine(UpdateLoading());
+            loadingOperation = SceneManager.LoadSceneAsync(scene);
+        });
+    }
+
+    public void StartGameSceneLoad(string scene)
+    {
+        print("start scene load");
+        loading_cutscene = false;
+        LoadScreen.gameObject.SetActive(true);
+        LoadScreen.DOFade(1, 1).OnComplete(() =>
+        {
+            text.SetActive(true);
+            StartCoroutine(UpdateLoading());
+            loadingOperation = SceneManager.LoadSceneAsync(scene);
+        });
+    }
+
+    public void StartSceneLoad(string scene, bool isCutscene)
+    {
+        print("start scene load");
+        loading_cutscene = isCutscene;
         LoadScreen.gameObject.SetActive(true);
         LoadScreen.DOFade(1, 1).OnComplete(() =>
         {
@@ -82,11 +110,15 @@ public class TransistionsAndLoading : MonoBehaviour
     private void EndSceneLoad()
     {
         text.SetActive(false);
+
+        PauseMenu.SetPause(false);
+
+        if (!loading_cutscene)
+            GameManager.instance.SetDataOnLoad();
+
         LoadScreen.DOFade(0, 1.5f).OnComplete(() =>
         {
             LoadScreen.gameObject.SetActive(false);
-            PauseMenu.SetPause(false);
-            GameManager.instance.SetDataOnLoad();
         });
 
         print("end scene load");

@@ -14,9 +14,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     private int MaxDays;
-    private int CurrentDay;
+    [HideInInspector] public int CurrentDay = 0;
 
-    private int Current_Patient;
     private GameObject Fire_Particles;
 
     [Header("Level Data")]
@@ -25,6 +24,8 @@ public class GameManager : MonoBehaviour
     private Transform patient_Parent;
     private Contract Contract;
     private List<GameObject> Patients;
+    private int Patient_Index;
+    private GameObject Current_Patient;
     private List<Stipulations> CurrentOrgans = new List<Stipulations>();
 
     private void Awake()
@@ -35,6 +36,11 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        MaxDays = Levels.Count - 1;
     }
 
     public void SetDataOnLoad()
@@ -52,7 +58,10 @@ public class GameManager : MonoBehaviour
 
         patient_Parent = GameObject.FindWithTag("Patient_Parent").transform;
         if (patient_Parent != null)
-            Instantiate(Patients[0], patient_Parent);
+        {
+            Current_Patient = Instantiate(Patients[0], patient_Parent);
+            Patient_Index = 0;
+        }
 
         CurrentOrgans = new List<Stipulations>();
     }
@@ -74,14 +83,15 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(2.5f);
 
-        int last = Current_Patient;
+        int last = Patient_Index;
 
-        if (Current_Patient >= Patients.Count)
-            Current_Patient = 0;
+        if (Patient_Index >= Patients.Count)
+            Patient_Index = 0;
         else
-            Current_Patient++;
+            Patient_Index++;
 
-        Patients[last] = Patients[Current_Patient];
+        Destroy(Current_Patient);
+        Current_Patient = Instantiate(Patients[Patient_Index], patient_Parent);
 
         yield return new WaitForSeconds(2.5f);
 
@@ -93,7 +103,7 @@ public class GameManager : MonoBehaviour
 
     public void AddOrganHarvested(Organs o)
     {
-        CurrentOrgans.Add(new Stipulations(o, Patients[Current_Patient].GetComponent<Patient>().characteristics));
+        CurrentOrgans.Add(new Stipulations(o, Patients[Patient_Index].GetComponent<Patient>().characteristics));
     }
 
     public bool CheckSacrifice()

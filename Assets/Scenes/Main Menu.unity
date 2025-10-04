@@ -1688,6 +1688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4945644e813af4cbe9c678ea6221bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Levels:
+  - {fileID: 11400000, guid: be5e9947ed1f83d4eb993bffe07ebbcf, type: 2}
 --- !u!1 &1144015880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3161,7 +3163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 139767781514445228, guid: 4a8dd1ff21b375a44bded3578b6680a5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartSceneLoad
+      value: StartGameSceneLoad
       objectReference: {fileID: 0}
     - target: {fileID: 139767781514445228, guid: 4a8dd1ff21b375a44bded3578b6680a5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
