@@ -67,7 +67,7 @@ public class MazeGameManager : MonoBehaviour
     private void FailMaze()
     {
         TrackBadTouch = false;
-        this.gameObject.SetActive(false);
+        Destroy(this.gameObject);
         Debug.Log("Failure :(");
     }
 }
