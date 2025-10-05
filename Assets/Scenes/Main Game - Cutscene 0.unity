@@ -295,7 +295,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.8
+  m_fontSize: 24.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1289,36 +1289,36 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 45a4ff1277aa8a14bab9bb73c2939bd6, type: 3}
   voice_entries:
   - text: Oh! There you are.
-    voice: {fileID: 8300000, guid: 352d78a34d9f679499fa485c2fcd2cd7, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   - text: You drop tools you've been carrying, searching for the sound of the voice.
       It comes from everywhere at once.
-    voice: {fileID: 8300000, guid: c434575b66b1b454590d498ec728d4dd, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   - text: No need to be so on edge. Though I suppose that's my fault, isn't it? But
       you called for me didn't you?
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   - text: Your head spins as you fall to your knees. The name god's name leaves your
       lips.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   - text: Yes! Clever little ant aren't you? I want to make a deal with you. If you
       can do this one *little* thing for me, I can make sure the rest of your life
       is spent in pure bliss. It's a *great*opportunity for you.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   - text: I don't ask for much, just a few offerings. But what's a few lives in exchange
       for ascension to a realm of ecstasy behind human comprehension? I do have a...
       particular taste, but it shouldn't be an issue for a smart ant like you~.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   - text: Just. Sign. here.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   - text: A contract appears in front of you. You don't think. You scramble for a
       pen, but they just laugh again.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   - text: Oh, don't be silly! We don't use mortal ink for these contracts. You know
       what I mean, don't you?
@@ -1336,11 +1336,11 @@ MonoBehaviour:
   - text: And it's gone as quickly as it appeared. You read the contract, quickly
       searching for what [god name] needs from you. The color drains from your face.
       You're a doctor. You save lives, not take them! How could you possibly...
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   - text: You shake your head. What's done is done. Their lives will be used for
       the greater good. You should get to work.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 0}
     bg_image_index: 0
   next_scene: Main Game - Level 1
 --- !u!1 &1473988341
@@ -1511,10 +1511,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1807113202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.05, y: 0.05}
-  m_AnchorMax: {x: 0.95, y: 0.95}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1540019756
 MonoBehaviour:
@@ -1545,8 +1545,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1563,8 +1563,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1891,10 +1891,10 @@ RectTransform:
   - {fileID: 1540019755}
   m_Father: {fileID: 1271847248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25, y: 0.05}
-  m_AnchorMax: {x: 0.75, y: 0.25}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 162}
+  m_SizeDelta: {x: -720, y: 216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1807113203
 MonoBehaviour:
@@ -1909,14 +1909,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.09433961, g: 0.006823297, b: 0.006823297, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a4cd7c19c7cbc9d49b2810efa6919d01, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
