@@ -102,8 +102,8 @@ public class MazeGameManager : MonoBehaviour
 
         CurrentBadTouches += 1;
 
-		//TODO: play audio
 		AudioManager.instance.StopSFX("squelch");
+		AudioManager.instance.PlaySFX("squish");
 		TrackBadTouch = false;
 
         Sequence mySequence = DOTween.Sequence();
