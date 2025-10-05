@@ -25,7 +25,9 @@ public class MazeGameManager : MonoBehaviour
 
     // max's messing around values
     public Transform knife_transform;
-    public Vector3 knife_start_pos;
+    private Vector3 knife_start_pos;
+    private Vector3 knife_start_scale;
+    private Quaternion knife_start_rot;
     private const float kKnifeLength = 0.5f;
     private const float kPlaysoundLength = 2.0f;
     private const float kAngleOffset = 60.0f;
@@ -44,7 +46,9 @@ public class MazeGameManager : MonoBehaviour
 			PlayNewSFXTime = AudioManager.instance.SFXDictionary["squelch"].length / 2.0f;
 		}
 
-		knife_transform.position = knife_start_pos;
+		knife_start_pos = knife_transform.position;
+		knife_start_scale = knife_transform.localScale;
+        knife_start_rot = knife_transform.rotation;
 	}
     public void EnableBadTouch()
     {
@@ -130,6 +134,8 @@ public class MazeGameManager : MonoBehaviour
         End_Goal.SetActive(false);
 
 		knife_transform.position = knife_start_pos;
+		knife_transform.localScale = knife_start_scale;
+		knife_transform.rotation = knife_start_rot;
 	}
 
     public void SuccessMaze()
