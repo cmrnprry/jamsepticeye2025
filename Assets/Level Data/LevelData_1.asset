@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patients:
   - {fileID: 1726394238937655578, guid: 9558ab92d785f164585382d446f25e51, type: 3}
-  - {fileID: 4011588749968021187, guid: 3dc8d1becd313d345a38772325b0b052, type: 3}
+  - {fileID: 4738583408723685530, guid: 651f0b2836eca654d945ffb93c6ab680, type: 3}
   Contract:
     stipulations_needed:
     - characteristics: 
       Type: 0
     - characteristics: 03000000
-      Type: 3
+      Type: 7
+    - characteristics: 05000000
+      Type: 4

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc77583663739743ae5effeb479a9b2, type: 3}
+  m_Name: LevelData_2
+  m_EditorClassIdentifier: 
+  patients:
+  - {fileID: 4011588749968021187, guid: 3dc8d1becd313d345a38772325b0b052, type: 3}
+  - {fileID: 9074050853038502740, guid: dbd40d84679c9484382615b17881b2a7, type: 3}
+  - {fileID: 4598496276036823358, guid: 18472d47efffbb1488d7d2fe7f8b99b3, type: 3}
+  - {fileID: 695220502867303016, guid: 493efb44643509841a5a477bd23b4890, type: 3}
+  Contract:
+    stipulations_needed:
+    - characteristics: 090000000b000000
+      Type: 0
+    - characteristics: 0300000007000000
+      Type: 7
+    - characteristics: 04000000
+      Type: 4
+    - characteristics: 0300000009000000
+      Type: 6
+    - characteristics: 08000000
+      Type: 2
