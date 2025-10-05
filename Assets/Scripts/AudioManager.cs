@@ -32,6 +32,12 @@ namespace AYellowpaper.SerializedCollections
             SFXSource.Stop();
         }
 
+        public static void PlayMenuClick()
+        {
+			instance.PlaySFX("stab");
+            instance.PlaySFX("click");
+        }
+
         public void PlaySFX(string src, float fadeIn = 0, float delay = 0)
         {
             if (SFXDictionary.ContainsKey(src))
