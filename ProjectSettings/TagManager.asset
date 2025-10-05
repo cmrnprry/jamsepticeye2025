@@ -8,6 +8,9 @@ TagManager:
   - Fire_Particles
   - Patient_Parent
   - No_More
+  - master
+  - sfx
+  - bgm
   layers:
   - Default
   - TransparentFX

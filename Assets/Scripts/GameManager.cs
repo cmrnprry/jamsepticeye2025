@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using AYellowpaper.SerializedCollections;
 
 [SerializeField]
 public enum Organs { Heart, Intestines, Stomach, Pancreas, Ribs, Spine, Liver, Lung };

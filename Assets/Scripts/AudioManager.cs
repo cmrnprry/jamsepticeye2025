@@ -18,6 +18,8 @@ namespace AYellowpaper.SerializedCollections
         [SerializedDictionary("BGM name", "BGM")]
         public SerializedDictionary<string, AudioClip> BGMDictionary;
         [SerializeField] private AudioSource BGMSource;
+        private Coroutine routine;
+        private bool noplay = false;
 
         [SerializedDictionary("SFX name", "SFX")]
         public SerializedDictionary<string, AudioClip> SFXDictionary;
@@ -41,17 +43,26 @@ namespace AYellowpaper.SerializedCollections
             PlayBGMIntro("MainMenu");
         }
 
+        public void StopBGM()
+        {
+            noplay = true;
+            BGMSource.Stop();
+            StopCoroutine(routine);
+        }
+
         public void PlayBGMIntro(string intro)
         {
-            BGMSource.clip = BGMDictionary[intro+"_Intro"];
+            noplay = false;
+            BGMSource.clip = BGMDictionary[intro + "_Intro"];
             BGMSource.loop = false;
             BGMSource.Play();
 
-            StartCoroutine(PlayFullAfterLoop(intro));
+            routine = StartCoroutine(PlayFullAfterLoop(intro));
         }
 
         public void PlayBGMLoop(string loop)
         {
+            noplay = false;
             BGMSource.clip = BGMDictionary[loop];
             BGMSource.loop = true;
             BGMSource.Play();
@@ -60,13 +71,15 @@ namespace AYellowpaper.SerializedCollections
         IEnumerator PlayFullAfterLoop(string loop)
         {
             yield return new WaitForEndOfFrame();
-            yield return new WaitUntil (() => !BGMSource.isPlaying);
-            PlayBGMLoop(loop + "_Loop");
+            yield return new WaitUntil(() => !BGMSource.isPlaying);
+
+            if (!noplay)
+                PlayBGMLoop(loop + "_Loop");
         }
 
         public static void PlayMenuClick()
         {
-			instance.PlaySFX("stab");
+            instance.PlaySFX("stab");
             instance.PlaySFX("click");
         }
 
@@ -102,20 +115,20 @@ namespace AYellowpaper.SerializedCollections
             }
         }
 
-		public void Update()
-		{
+        public void Update()
+        {
             for (int i = 0; i < added_sources.Count; i++)
             {
                 if (!added_sources[i].isPlaying)
                 {
-					Destroy(added_sources[i].gameObject);
-					added_sources.RemoveAt(i);
-					--i;
-				}
+                    Destroy(added_sources[i].gameObject);
+                    added_sources.RemoveAt(i);
+                    --i;
+                }
             }
-		}
+        }
 
-		public void StopSFX(AudioClip src, float delay = 0)
+        public void StopSFX(AudioClip src, float delay = 0)
         {
             StopSFX(src.name);
         }
@@ -126,24 +139,34 @@ namespace AYellowpaper.SerializedCollections
             {
                 SFXSource.Stop();
             }
-			for (int i = 0; i < added_sources.Count; i++)
-			{
-				if (added_sources[i].isPlaying && added_sources[i].clip.name == src)
-				{
-					added_sources[i].Stop();
-					Destroy(added_sources[i].gameObject);
-					added_sources.RemoveAt(i);
+            for (int i = 0; i < added_sources.Count; i++)
+            {
+                if (added_sources[i].isPlaying && added_sources[i].clip.name == src)
+                {
+                    added_sources[i].Stop();
+                    Destroy(added_sources[i].gameObject);
+                    added_sources.RemoveAt(i);
                     --i;
-				}
-			}
-		}
+                }
+            }
+        }
 
         private IEnumerator FadeIn(AudioSource src, float duration = 0, float delay = 0)
         {
+            float startVolume = 0;
+            float endVolume = src.volume;
             src.volume = 0;
+            float rate = 1.0f / duration;
+
             yield return new WaitForSeconds(delay);
 
             src.Play();
+            for (float x = 0.0f; x <= 1.0f; x += Time.deltaTime * rate)
+            {
+                src.volume = Mathf.Lerp(startVolume, endVolume, x);
+                yield return null;
+            }
+
         }
 
         private IEnumerator FadeOut(AudioSource src, float duration = 0, float delay = 0)

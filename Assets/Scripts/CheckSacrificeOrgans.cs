@@ -5,6 +5,7 @@ using AYellowpaper.SerializedCollections;
 using UnityEngine.Rendering.Universal;
 using DG.Tweening;
 using TMPro;
+using AYellowpaper.SerializedCollections;
 
 public class CheckSacrificeOrgans : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class CheckSacrificeOrgans : MonoBehaviour
 
         yield return new WaitForSeconds(0.25f);
 
+        AudioManager.instance.PlaySFX("tinnitus", 3f);
         Sequence shaking = DOTween.Sequence();
         shaking.Append(this.gameObject.transform.DOShakePosition(0.5f, 1, 10, 90, false, false))
             .Append(this.gameObject.transform.DOShakePosition(1.5f, 5, 15, 90, false, false))
@@ -59,14 +61,20 @@ public class CheckSacrificeOrgans : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
+        AudioManager.instance.StopSFX("tinnitus");
         CleanUp();
 
         finaltext.gameObject.SetActive(true);
         text.text = GameManager.instance.CheckSacrifice() ? "The offering is suffiant." : "I am disappointed in you.";
+        AudioManager.instance.StopBGM();
+        AudioManager.instance.PlaySFX("god");
 
         yield return new WaitForSeconds(2f);
         if (!GameManager.instance.CheckSacrifice())
+        {
             TransistionsAndLoading.instance.StartCutSceneLoad("Main Game - Cutscene BAD END");
+        }
+            
         else
             TransistionsAndLoading.instance.StartCutSceneLoad("Main Game - Cutscene " + GameManager.instance.CurrentDay);
     }
