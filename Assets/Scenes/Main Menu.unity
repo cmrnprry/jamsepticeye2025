@@ -258,7 +258,7 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 7b2de2c5393887341979c113b0ece87c, type: 2}
   BGMDictionary:
     _serializedList:
-    - Key: Gameplay_Loop
+    - Key: Gameplay
       Value: {fileID: 8300000, guid: df3ebfe161a98c049b9df118277253a0, type: 3}
     - Key: God_Intro
       Value: {fileID: 8300000, guid: 32dd6a7a1b8784e4480a5338d3b829f3, type: 3}
