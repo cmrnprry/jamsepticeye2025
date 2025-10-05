@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private int MaxDays;
     [HideInInspector] public int CurrentDay = 0;
+    [HideInInspector] public int FailedDays = 0;
 
     private GameObject Fire_Particles;
 
@@ -41,6 +42,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         MaxDays = Levels.Count - 1;
+    }
+
+    public List<Stipulations> GetCurrentOrgans()
+    {
+        return CurrentOrgans;
     }
 
     public void SetDataOnLoad()
@@ -91,7 +97,11 @@ public class GameManager : MonoBehaviour
             Patient_Index++;
 
         Destroy(Current_Patient);
-        Current_Patient = Instantiate(Patients[Patient_Index], patient_Parent);
+
+        if (Patient_Index < Patients.Count)
+            Current_Patient = Instantiate(Patients[Patient_Index], patient_Parent);
+        else
+            GameObject.FindWithTag("No_More").transform.GetChild(0).gameObject.SetActive(true);
 
         yield return new WaitForSeconds(2.5f);
 

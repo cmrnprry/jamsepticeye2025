@@ -6,20 +6,19 @@ using UnityEngine.UI;
 public class CutOpenPatient : MonoBehaviour
 {
     public GameObject Guts;
-    public RectTransform rect;
+    public Transform rect;
     public int MaxCuts;
 
     private int CurrentCuts = 0;
     private bool Dragging = false;
 
     private Vector3 mousePosition;
-    public Vector3 offset = new Vector3(17, -22, 0);
-    public float moveSpeed = 0.5f;
+    public float moveSpeed = 2f;
 
     public void UpdateShouldFollow(bool new_state)
     {
         Dragging = new_state;
-        //Cursor.visible = !new_state;
+        Cursor.visible = !new_state;
     }
 
     public void CutAlongLine(GameObject line)
@@ -44,9 +43,9 @@ public class CutOpenPatient : MonoBehaviour
     {
         if (Dragging)
         {
-            mousePosition = Input.mousePosition + offset;
+            mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+            rect.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
         }
             
     }

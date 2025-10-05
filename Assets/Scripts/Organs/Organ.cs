@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Organ : MonoBehaviour
 {
     public GameObject Maze;
     public Organs type;
-    
+
     //TODO: add difficulty things that turn on depending on day
 
-
-   private void DetermineDifficulty()
+    private void Start()
+    {
+        this.gameObject.GetComponent<Image>().alphaHitTestMinimumThreshold = .9f;
+    }
+    private void DetermineDifficulty()
     {
 
     }
