@@ -1,8 +1,9 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class MazeGameManager : MonoBehaviour
 {
@@ -25,12 +26,13 @@ public class MazeGameManager : MonoBehaviour
     public Transform knife_transform;
     private const float kKnifeLength = 0.5f;
     private const float kAngleOffset = 60.0f;
-    public Vector2 LastToMouse;
+    private EventSystem EventSystem;
 
     private void Start()
     {
         Maze.alphaHitTestMinimumThreshold = .75f;
-    }
+		EventSystem = GetComponent<EventSystem>();
+	}
     public void EnableBadTouch()
     {
         TrackBadTouch = true;
@@ -40,15 +42,28 @@ public class MazeGameManager : MonoBehaviour
     {
         if (TrackBadTouch)
         {
-            Vector2 cur_pos = new Vector2( knife_transform.position.x, knife_transform.position.y );
-            Vector2 mouse_pos = Camera.main.ScreenToWorldPoint( Input.mousePosition );
-            Vector2 to_mouse =  cur_pos - mouse_pos;
-            float angle = Vector2.SignedAngle(to_mouse.normalized, Vector2.right) + kAngleOffset;
-            LastToMouse = to_mouse;
+            // Cursed math
+            Vector2 cur_pos = new Vector2(knife_transform.position.x, knife_transform.position.y);
+            Vector2 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 to_mouse_norm = (cur_pos - mouse_pos).normalized;
+            float angle = Vector2.SignedAngle(to_mouse_norm, Vector2.right);
+            float sign = Mathf.Sign(Vector2.Dot(to_mouse_norm, Vector2.left));
+            float offset = sign > 0.0f ? kAngleOffset * -sign + 180.0f : kAngleOffset * -sign;
 
-			Vector2 new_pos = (to_mouse.normalized * kKnifeLength) + mouse_pos;
-            knife_transform.position = new Vector3( new_pos.x, new_pos.y, knife_transform.position.z );
-            knife_transform.rotation = Quaternion.Euler(0.0f, 0.0f, -angle);
+			Vector2 new_pos = (to_mouse_norm * kKnifeLength) + mouse_pos;
+            knife_transform.localScale = new Vector3(Mathf.Abs(knife_transform.localScale.x) * sign, knife_transform.localScale.y, knife_transform.localScale.z);
+            knife_transform.position = new Vector3(new_pos.x, new_pos.y, knife_transform.position.z);
+            knife_transform.rotation = Quaternion.Euler(0.0f, 0.0f, -(angle + offset));
+
+            PointerEventData fake_pointer = new PointerEventData(EventSystem);
+            fake_pointer.position = Camera.main.WorldToScreenPoint(knife_transform.position);
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(fake_pointer, results);
+            RaycastResult top_result = results[0];
+			if (top_result.gameObject.name == "Bad Touch")
+			{
+                BadTouchCollision();
+            }
         }
     }
 
