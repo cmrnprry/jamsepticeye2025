@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
 
     private Transform patient_Parent;
     private Contract Contract;
-    private List<GameObject> Patients;
-    private int Patient_Index;
+    [HideInInspector] public List<GameObject> Patients;
+   private int Patient_Index;
     private GameObject Current_Patient;
     private List<Stipulations> CurrentOrgans = new List<Stipulations>();
 

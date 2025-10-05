@@ -83,7 +83,6 @@ Material:
     - _BumpOutline: 0
     - _BumpScale: 1
     - _ColorMask: 15
-    - _CullMode: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _Diffuse: 0.5
@@ -297,7 +296,7 @@ MonoBehaviour:
   - {fileID: 28268798066460806}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
-  m_ClearDynamicDataOnBuild: 1
+  m_ClearDynamicDataOnBuild: 0
   m_UsedGlyphRects:
   - m_X: 0
     m_Y: 0
