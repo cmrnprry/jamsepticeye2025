@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Level Data")]
     public List<LevelData> Levels;
+    private Button TossBody;
 
     private Transform patient_Parent;
     private Contract Contract;
@@ -51,9 +52,9 @@ public class GameManager : MonoBehaviour
 
     public void SetDataOnLoad()
     {
-        Button toss = GameObject.FindWithTag("TossBody").GetComponent<Button>();
-        if (toss != null)
-            toss.onClick.AddListener(TossBody);
+        Button TossBody = GameObject.FindWithTag("TossBody").GetComponent<Button>();
+        if (TossBody != null)
+            TossBody.onClick.AddListener(Toss);
 
         Fire_Particles = GameObject.FindWithTag("Fire_Particles");
         if (Fire_Particles != null)
@@ -72,8 +73,9 @@ public class GameManager : MonoBehaviour
         CurrentOrgans = new List<Stipulations>();
     }
 
-    private void TossBody()
+    private void Toss()
     {
+        GameObject.FindWithTag("TossBody").GetComponent<Button>().enabled = false;
         StartCoroutine(FirePlay());
     }
 
@@ -103,12 +105,14 @@ public class GameManager : MonoBehaviour
         else
             GameObject.FindWithTag("No_More").transform.GetChild(0).gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
 
         for (int ii = 0; ii < Fire_Particles.transform.childCount; ii++)
         {
             Fire_Particles.transform.GetChild(ii).gameObject.SetActive(false);
         }
+
+        GameObject.FindWithTag("TossBody").GetComponent<Button>().enabled = true;
     }
 
     public void AddOrganHarvested(Organs o)

@@ -6,11 +6,10 @@ using TMPro;
 public class PatientsLeft : MonoBehaviour
 {
     private TextMeshProUGUI TMP;
-    private int TotalPatients;
+    public int TotalPatients;
     private void Start()
     {
         TMP = GetComponent<TextMeshProUGUI>();
-        TotalPatients = GameManager.instance.Patients.Count;
     }
 
     public void UpdateText()
