@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using AYellowpaper.SerializedCollections;
 
 public class TransistionsAndLoading : MonoBehaviour
 {
@@ -114,7 +115,14 @@ public class TransistionsAndLoading : MonoBehaviour
         PauseMenu.SetPause(false);
 
         if (!loading_cutscene)
+        {
             GameManager.instance.SetDataOnLoad();
+            AudioManager.instance.PlayBGMLoop("Gameplay");
+        }
+        else
+            AudioManager.instance.PlayBGMIntro("God");
+
+
 
         LoadScreen.DOFade(0, 1.5f).OnComplete(() =>
         {

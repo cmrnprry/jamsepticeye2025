@@ -15,6 +15,10 @@ namespace AYellowpaper.SerializedCollections
         [Header("Settings Volume")]
         public AudioMixer mixer;
 
+        [SerializedDictionary("BGM name", "BGM")]
+        public SerializedDictionary<string, AudioClip> BGMDictionary;
+        [SerializeField] private AudioSource BGMSource;
+
         [SerializedDictionary("SFX name", "SFX")]
         public SerializedDictionary<string, AudioClip> SFXDictionary;
         [SerializeField] private AudioSource SFXSource;
@@ -30,6 +34,40 @@ namespace AYellowpaper.SerializedCollections
 
             DontDestroyOnLoad(gameObject);
             SFXSource.Stop();
+        }
+
+        private void Start()
+        {
+            PlayBGMIntro("MainMenu");
+        }
+
+        public void PlayBGMIntro(string intro)
+        {
+            BGMSource.clip = BGMDictionary[intro+"_Intro"];
+            BGMSource.loop = false;
+            BGMSource.Play();
+
+            StartCoroutine(PlayFullAfterLoop(intro));
+        }
+
+        public void PlayBGMLoop(string loop)
+        {
+            BGMSource.clip = BGMDictionary[loop];
+            BGMSource.loop = true;
+            BGMSource.Play();
+        }
+
+        IEnumerator PlayFullAfterLoop(string loop)
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitUntil (() => !BGMSource.isPlaying);
+            PlayBGMLoop(loop + "_Loop");
+        }
+
+        public static void PlayMenuClick()
+        {
+			instance.PlaySFX("stab");
+            instance.PlaySFX("click");
         }
 
         public void PlaySFX(string src, float fadeIn = 0, float delay = 0)

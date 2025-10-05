@@ -43,7 +43,8 @@ public class Cutscene : MonoBehaviour
     void DisplayEntry(int index)
     {
         typewriter.ShowText(voice_entries[index].text);
-        AudioManager.instance.PlaySFX(voice_entries[index].voice);
+        if (voice_entries.Count > 0 && voice_entries[index].voice != null)
+            AudioManager.instance.PlaySFX(voice_entries[index].voice);
         background.sprite = backgrounds[voice_entries[index].bg_image_index];
         continue_button.DOFade(0.0f, 0.25f);
     }
@@ -64,11 +65,13 @@ void Update()
             }
             else if (entry_index < voice_entries.Count)
             {
-                AudioManager.instance.StopSFX(voice_entries[entry_index].voice);
+                if (voice_entries[entry_index].voice != null)
+                    AudioManager.instance.StopSFX(voice_entries[entry_index].voice);
+
                 entry_index++;
                 if (entry_index >= voice_entries.Count)
                 {
-                    TransistionsAndLoading.instance.StartSceneLoad(next_scene, false);
+                        TransistionsAndLoading.instance.StartSceneLoad(next_scene, next_scene == "Main Menu");
                 }
                 else
                 {
