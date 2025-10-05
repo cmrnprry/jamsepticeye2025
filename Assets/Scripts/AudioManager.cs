@@ -32,12 +32,6 @@ namespace AYellowpaper.SerializedCollections
             SFXSource.Stop();
         }
 
-        public static void PlayMenuClick()
-        {
-			instance.PlaySFX("stab");
-            instance.PlaySFX("click");
-        }
-
         public void PlaySFX(string src, float fadeIn = 0, float delay = 0)
         {
             if (SFXDictionary.ContainsKey(src))
@@ -70,7 +64,20 @@ namespace AYellowpaper.SerializedCollections
             }
         }
 
-        public void StopSFX(AudioClip src, float delay = 0)
+		public void Update()
+		{
+            for (int i = 0; i < added_sources.Count; i++)
+            {
+                if (!added_sources[i].isPlaying)
+                {
+					Destroy(added_sources[i].gameObject);
+					added_sources.RemoveAt(i);
+					--i;
+				}
+            }
+		}
+
+		public void StopSFX(AudioClip src, float delay = 0)
         {
             StopSFX(src.name);
         }
@@ -81,20 +88,17 @@ namespace AYellowpaper.SerializedCollections
             {
                 SFXSource.Stop();
             }
-            else
-            {
-                for (int i = 0; i < added_sources.Count; i++)
-                {
-                    if (added_sources[i].isPlaying && added_sources[i].clip.name == src)
-                    {
-                        added_sources[i].Stop();
-                        Destroy(added_sources[i].gameObject);
-                        added_sources.RemoveAt(i);
-                        return;
-                    }
-                }
-            }
-        }
+			for (int i = 0; i < added_sources.Count; i++)
+			{
+				if (added_sources[i].isPlaying && added_sources[i].clip.name == src)
+				{
+					added_sources[i].Stop();
+					Destroy(added_sources[i].gameObject);
+					added_sources.RemoveAt(i);
+                    --i;
+				}
+			}
+		}
 
         private IEnumerator FadeIn(AudioSource src, float duration = 0, float delay = 0)
         {

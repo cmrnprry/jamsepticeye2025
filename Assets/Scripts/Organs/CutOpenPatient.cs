@@ -1,3 +1,4 @@
+using AYellowpaper.SerializedCollections;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,8 @@ public class CutOpenPatient : MonoBehaviour
     public void UpdateShouldFollow(bool new_state)
     {
         Dragging = new_state;
-        Cursor.visible = !new_state;
+        AudioManager.instance.PlaySFX("pickup_scalpel");
+		Cursor.visible = !new_state;
     }
 
     public void CutAlongLine(GameObject line)
@@ -28,6 +30,8 @@ public class CutOpenPatient : MonoBehaviour
 
         CurrentCuts++;
         line.SetActive(false);
+        AudioManager.instance.PlaySFX("squish");
+        AudioManager.instance.PlaySFX("crunch" + Random.Range(1,4));
 
         if (CurrentCuts >= MaxCuts)
         {

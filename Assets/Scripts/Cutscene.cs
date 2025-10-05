@@ -62,7 +62,7 @@ void Update()
             {
                 typewriter.SkipTypewriter();
             }
-            else
+            else if (entry_index < voice_entries.Count)
             {
                 AudioManager.instance.StopSFX(voice_entries[entry_index].voice);
                 entry_index++;

@@ -1,3 +1,4 @@
+using AYellowpaper.SerializedCollections;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,24 +25,46 @@ public class MazeGameManager : MonoBehaviour
 
     // max's messing around values
     public Transform knife_transform;
+    public Vector3 knife_start_pos;
     private const float kKnifeLength = 0.5f;
+    private const float kPlaysoundLength = 2.0f;
     private const float kAngleOffset = 60.0f;
     private EventSystem EventSystem;
+    private float SFXTimer = 0.0f;
+    private float PlayNewSFXTime = 0.0f;
+    private Vector3 PlaySoundLastPos;
 
     private void Start()
     {
         Maze.alphaHitTestMinimumThreshold = .9f;
 		EventSystem = GetComponent<EventSystem>();
+
+        if (AudioManager.instance.SFXDictionary.ContainsKey("squelch"))
+        {
+			PlayNewSFXTime = AudioManager.instance.SFXDictionary["squelch"].length / 2.0f;
+		}
+
+		knife_transform.position = knife_start_pos;
 	}
     public void EnableBadTouch()
     {
         TrackBadTouch = true;
-    }
+        AudioManager.instance.PlaySFX("squelch");
+		SFXTimer = 0.0f;
+        PlaySoundLastPos = knife_transform.position;
+	}
 
     public void Update()
     {
         if (TrackBadTouch)
         {
+            SFXTimer += Time.deltaTime;
+			if (SFXTimer > PlayNewSFXTime)
+			{
+				AudioManager.instance.PlaySFX("squelch");
+				SFXTimer = 0.0f;
+			}
+
             // Cursed math
             Vector2 cur_pos = new Vector2(knife_transform.position.x, knife_transform.position.y);
             Vector2 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -55,12 +78,17 @@ public class MazeGameManager : MonoBehaviour
             knife_transform.position = new Vector3(new_pos.x, new_pos.y, knife_transform.position.z);
             knife_transform.rotation = Quaternion.Euler(0.0f, 0.0f, -(angle + offset));
 
+            if (Vector3.Distance(PlaySoundLastPos, knife_transform.position) > kPlaysoundLength)
+            {
+				AudioManager.instance.PlaySFX("crunch" + Random.Range(1, 4));
+                PlaySoundLastPos = knife_transform.position;
+			}
+
             PointerEventData fake_pointer = new PointerEventData(EventSystem);
             fake_pointer.position = Camera.main.WorldToScreenPoint(knife_transform.position);
             List<RaycastResult> results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(fake_pointer, results);
-            RaycastResult top_result = results[0];
-			if (top_result.gameObject.name == "Bad Touch")
+			if (results.Count < 1 || results[0].gameObject.name == "Bad Touch")
 			{
                 BadTouchCollision();
             }
@@ -74,8 +102,9 @@ public class MazeGameManager : MonoBehaviour
 
         CurrentBadTouches += 1;
 
-        //TODO: play audio
-        TrackBadTouch = false;
+		//TODO: play audio
+		AudioManager.instance.StopSFX("squelch");
+		TrackBadTouch = false;
 
         Sequence mySequence = DOTween.Sequence();
 
@@ -99,20 +128,23 @@ public class MazeGameManager : MonoBehaviour
     {
         Start_Goal.SetActive(true);
         End_Goal.SetActive(false);
-    }
+
+		knife_transform.position = knife_start_pos;
+	}
 
     public void SuccessMaze()
     {
         TrackBadTouch = false;
         GameManager.instance.AddOrganHarvested(organ);
         Destroy(this.gameObject);
-        Debug.Log("Success :(");
+		AudioManager.instance.StopSFX("squelch");
+		Debug.Log("Success :)");
     }
 
     private void FailMaze()
     {
         TrackBadTouch = false;
         Destroy(this.gameObject);
-        Debug.Log("Failure :(");
+		Debug.Log("Failure :(");
     }
 }
