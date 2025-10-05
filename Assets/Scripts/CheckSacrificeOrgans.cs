@@ -29,10 +29,6 @@ public class CheckSacrificeOrgans : MonoBehaviour
         StartCoroutine(SacrificeOrgans());       
     }
 
-    public void DebugTest()
-    {
-        StartCoroutine(SacrificeOrgans());
-    }
     IEnumerator SacrificeOrgans()
     {
         foreach (var particle in particleSystems)
@@ -69,7 +65,10 @@ public class CheckSacrificeOrgans : MonoBehaviour
         text.text = GameManager.instance.CheckSacrifice() ? "The offering is suffiant." : "I am disappointed in you.";
 
         yield return new WaitForSeconds(2f);
-        TransistionsAndLoading.instance.StartCutSceneLoad("Main Game - Cutscne " + GameManager.instance.CurrentDay);
+        if (!GameManager.instance.CheckSacrifice())
+            TransistionsAndLoading.instance.StartCutSceneLoad("Main Game - Cutscne BAD END");
+        else
+            TransistionsAndLoading.instance.StartCutSceneLoad("Main Game - Cutscne " + GameManager.instance.CurrentDay);
     }
 
     private void CleanUp()
