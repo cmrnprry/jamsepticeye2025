@@ -30,7 +30,7 @@ public class MazeGameManager : MonoBehaviour
 
     private void Start()
     {
-        Maze.alphaHitTestMinimumThreshold = .75f;
+        Maze.alphaHitTestMinimumThreshold = .9f;
 		EventSystem = GetComponent<EventSystem>();
 	}
     public void EnableBadTouch()
@@ -105,6 +105,7 @@ public class MazeGameManager : MonoBehaviour
     {
         TrackBadTouch = false;
         GameManager.instance.AddOrganHarvested(organ);
+        Destroy(this.gameObject);
         Debug.Log("Success :(");
     }
 

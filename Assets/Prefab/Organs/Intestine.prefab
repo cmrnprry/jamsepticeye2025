@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5007719119868048516, guid: 18cdc7e2ae16fd84ab7bb9b6b36e6b45, type: 3}
+      propertyPath: Maze
+      value: 
+      objectReference: {fileID: 7211967757203268561, guid: 49fd3cf7eec54504e96cce534c6f1dc0, type: 3}
     - target: {fileID: 8591636648360113738, guid: 18cdc7e2ae16fd84ab7bb9b6b36e6b45, type: 3}
       propertyPath: m_Name
-      value: Organ_Prefab
+      value: Intestine
       objectReference: {fileID: 0}
     - target: {fileID: 8888415333627657680, guid: 18cdc7e2ae16fd84ab7bb9b6b36e6b45, type: 3}
       propertyPath: m_Pivot.x

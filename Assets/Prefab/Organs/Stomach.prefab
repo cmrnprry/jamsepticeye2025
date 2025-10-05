@@ -13,6 +13,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e052e4abc4e8f5143967666820344457, type: 3}
     - target: {fileID: 5007719119868048516, guid: 18cdc7e2ae16fd84ab7bb9b6b36e6b45, type: 3}
+      propertyPath: Maze
+      value: 
+      objectReference: {fileID: 8252081911988272159, guid: d1f9f2932fb15d54392cf2059d89adaf, type: 3}
+    - target: {fileID: 5007719119868048516, guid: 18cdc7e2ae16fd84ab7bb9b6b36e6b45, type: 3}
       propertyPath: type
       value: 2
       objectReference: {fileID: 0}
