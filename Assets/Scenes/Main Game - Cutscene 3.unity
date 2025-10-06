@@ -1293,7 +1293,7 @@ MonoBehaviour:
       to do.
     voice: {fileID: 8300000, guid: 352d78a34d9f679499fa485c2fcd2cd7, type: 3}
     bg_image_index: 0
-  - text: You raise your hands to [god name]. Yes. Yes, you've finally done it.
+  - text: You raise your hands to them. Yes. Yes, you've finally done it.
     voice: {fileID: 8300000, guid: c434575b66b1b454590d498ec728d4dd, type: 3}
     bg_image_index: 0
   - text: As promised, I will make sure the rest of your life is spent in bliss.
