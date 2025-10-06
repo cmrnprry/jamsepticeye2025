@@ -1299,8 +1299,7 @@ MonoBehaviour:
       you called for me didn't you?
     voice: {fileID: 0}
     bg_image_index: 0
-  - text: Your head spins as you fall to your knees. The name god's name leaves your
-      lips.
+  - text: Your head spins as you fall to your knees. The god's name leaves your lips.
     voice: {fileID: 0}
     bg_image_index: 0
   - text: Yes! Clever little ant aren't you? I want to make a deal with you. If you
