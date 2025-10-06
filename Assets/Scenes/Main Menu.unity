@@ -2859,6 +2859,8 @@ MonoBehaviour:
   FailedDays: 0
   Levels:
   - {fileID: 11400000, guid: be5e9947ed1f83d4eb993bffe07ebbcf, type: 2}
+  - {fileID: 11400000, guid: 72acb21ae76c7a44d92d546f3d3f415a, type: 2}
+  - {fileID: 11400000, guid: 216abcedc8462a645ae5e9998fe4dc03, type: 2}
   Patients: []
 --- !u!1 &919944690
 GameObject:

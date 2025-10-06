@@ -65,7 +65,7 @@ public class CheckSacrificeOrgans : MonoBehaviour
         CleanUp();
 
         finaltext.gameObject.SetActive(true);
-        text.text = GameManager.instance.CheckSacrifice() ? "The offering is suffiant." : "I am disappointed in you.";
+        text.text = GameManager.instance.CheckSacrifice() ? "The offering is sufficient." : "I am disappointed in you.";
         AudioManager.instance.StopBGM();
         AudioManager.instance.PlaySFX("god");
 
