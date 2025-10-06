@@ -1292,40 +1292,40 @@ MonoBehaviour:
   voice_entries:
   - text: 'I thought I told you- I. Have. Particular. Tastes. Are you just throwing
       this opportunity away? Did you do it on purpose? '
-    voice: {fileID: 8300000, guid: 352d78a34d9f679499fa485c2fcd2cd7, type: 3}
+    voice: {fileID: 8300000, guid: 195bd683f319dd94ea7842e6188c3551, type: 3}
     bg_image_index: 0
   - text: Their anger presses down on you. Forcing you to your knees. You clasp your
       hands together in prayer.
-    voice: {fileID: 8300000, guid: c434575b66b1b454590d498ec728d4dd, type: 3}
+    voice: {fileID: 8300000, guid: dfc51dad5e9cdaa47be1a06046f4ced7, type: 3}
     bg_image_index: 0
   - text: ' Oh don''t start that. I should have know better. An ant is still just
       an ant, no matter how smart.'
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 1464d9547b3905347a3e94b88621202a, type: 3}
     bg_image_index: 0
   - text: You beg and plead. It was a mistake. You'll do better next time, you swear.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 94ab49d6a7074a14bbf8e8dc26bbaf0f, type: 3}
     bg_image_index: 0
   - text: There is no next time~ I told you not to fail too many times! I'm a bit
       of a stickler for rules sooooo bye bye!
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 89160d16c826c284f92530216003a1a8, type: 3}
     bg_image_index: 0
   - text: For a moment you think you're safe. The respite doesn't last long.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 7d38cb99846e50f4ba1870691199da65, type: 3}
     bg_image_index: 0
   - text: They appear from the floor, the ceiling, the walls- The souls of those
       you condemned to damnation wail and moan. They grab your skin, your hair, your
       face.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 3223a15907337ae418b02beedafe76e6, type: 3}
     bg_image_index: 1
   - text: You scream for help that never comes as the damned rip your skin from your
       bones and bathe in your blood until there's nothing left of you- Nothing but
       your soul.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: c464f3b4329365447b77a583f48b35d8, type: 3}
     bg_image_index: 1
   - text: A soul the damned snatch and pull down with them. Down to a hell where
       they can cut you open like you did them. Where they can eat your still beating
       heart and relish in your misery for all eternity.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 958874bea1380494b889dec44ffd16f5, type: 3}
     bg_image_index: 2
   next_scene: Main Menu
 --- !u!1 &1473988341
