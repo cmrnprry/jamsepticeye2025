@@ -1304,7 +1304,7 @@ MonoBehaviour:
     bg_image_index: 0
   - text: Yes! Clever little ant aren't you? I want to make a deal with you. If you
       can do this one *little* thing for me, I can make sure the rest of your life
-      is spent in pure bliss. It's a *great*opportunity for you.
+      is spent in pure bliss. It's a <i>great</i>opportunity for you.
     voice: {fileID: 8300000, guid: 687edabf0ff5c0844b9e6855aa9ad2fd, type: 3}
     bg_image_index: 0
   - text: I don't ask for much, just a few offerings. But what's a few lives in exchange
@@ -1333,7 +1333,7 @@ MonoBehaviour:
     voice: {fileID: 8300000, guid: 56cd9a9e7120d884b82f5c14923f935d, type: 3}
     bg_image_index: 0
   - text: And it's gone as quickly as it appeared. You read the contract, quickly
-      searching for what [god name] needs from you. The color drains from your face.
+      searching for what your god needs from you. The color drains from your face.
       You're a doctor. You save lives, not take them! How could you possibly...
     voice: {fileID: 8300000, guid: 0236548c91a279e4299c22550d3462b9, type: 3}
     bg_image_index: 0
