@@ -123,6 +123,9 @@ public class GameManager : MonoBehaviour
 
     public bool CheckSacrifice()
     {
+        if (Contract.stipulations_needed.Count < CurrentOrgans.Count)
+            return false;
+
         foreach (Stipulations s in Contract.stipulations_needed)
         {
             bool match_found = false;

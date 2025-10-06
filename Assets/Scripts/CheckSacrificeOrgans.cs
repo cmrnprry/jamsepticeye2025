@@ -72,6 +72,7 @@ public class CheckSacrificeOrgans : MonoBehaviour
         yield return new WaitForSeconds(2f);
         if (!GameManager.instance.CheckSacrifice())
         {
+            GameManager.instance.CurrentDay = 0;
             TransistionsAndLoading.instance.StartCutSceneLoad("Main Game - Cutscene BAD END");
         }
             
