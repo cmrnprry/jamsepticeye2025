@@ -144,7 +144,8 @@ public class MazeGameManager : MonoBehaviour
         GameManager.instance.AddOrganHarvested(organ);
         Destroy(this.gameObject);
 		AudioManager.instance.StopSFX("squelch");
-		Debug.Log("Success :)");
+		AudioManager.instance.PlaySFX("plop");
+        Debug.Log("Success :)");
     }
 
     private void FailMaze()

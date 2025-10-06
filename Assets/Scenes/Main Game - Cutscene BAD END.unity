@@ -1288,6 +1288,7 @@ MonoBehaviour:
   backgrounds:
   - {fileID: 21300000, guid: 6680c6225fb09c04999539456352d2dc, type: 3}
   - {fileID: 21300000, guid: 72f48e1e3f8355f4ea8a5184e59552e3, type: 3}
+  - {fileID: 21300000, guid: ecb3be75991fb47429353ecac3e2bdc2, type: 3}
   voice_entries:
   - text: 'I thought I told you- I. Have. Particular. Tastes. Are you just throwing
       this opportunity away? Did you do it on purpose? '
@@ -1325,7 +1326,7 @@ MonoBehaviour:
       they can cut you open like you did them. Where they can eat your still beating
       heart and relish in your misery for all eternity.
     voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
-    bg_image_index: 1
+    bg_image_index: 2
   next_scene: Main Menu
 --- !u!1 &1473988341
 GameObject:

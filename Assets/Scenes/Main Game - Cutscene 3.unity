@@ -1287,6 +1287,7 @@ MonoBehaviour:
   continue_button_obj: {fileID: 43841771}
   backgrounds:
   - {fileID: 21300000, guid: 45a4ff1277aa8a14bab9bb73c2939bd6, type: 3}
+  - {fileID: 21300000, guid: ecb3be75991fb47429353ecac3e2bdc2, type: 3}
   voice_entries:
   - text: Congratulations, little ant. You have done what those before you failed
       to do.
@@ -1326,7 +1327,7 @@ MonoBehaviour:
       souls, excited to pay you back ten-fold. They cut you open like you did them.
       They eat your still beating heart and relish in your misery for all eternity.
     voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
-    bg_image_index: 0
+    bg_image_index: 1
   next_scene: Main Menu
 --- !u!1 &1473988341
 GameObject:
