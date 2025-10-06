@@ -1291,24 +1291,24 @@ MonoBehaviour:
   voice_entries:
   - text: Congratulations, little ant. You have done what those before you failed
       to do.
-    voice: {fileID: 8300000, guid: 352d78a34d9f679499fa485c2fcd2cd7, type: 3}
+    voice: {fileID: 8300000, guid: 34fe845359a5c4f45b6168245a452eb3, type: 3}
     bg_image_index: 0
   - text: You raise your hands to them. Yes. Yes, you've finally done it.
-    voice: {fileID: 8300000, guid: c434575b66b1b454590d498ec728d4dd, type: 3}
+    voice: {fileID: 8300000, guid: b102a8e76b254294f8019b2b5da35b47, type: 3}
     bg_image_index: 0
   - text: As promised, I will make sure the rest of your life is spent in bliss.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 78341ade0181ff54e9e93625e3be5494, type: 3}
     bg_image_index: 0
   - text: 'You feel the god enter your body, and you jolt. All of the world''s knowledge
       and power at your finger tips. You can feel everything as you rise above the
       mortal plane. Ecstasy is an understatement as you reveal in ascension to the
       godly plane. '
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 9f05342a937a17d4fba2ee00c0d98686, type: 3}
     bg_image_index: 0
   - text: 'It doesn''t last as blood spurts from your eyes, mouth, ears- everywhere.
       Your bones crack and contort. The light dying from your eyes as the power that
       once filled your entire being slips away. '
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: a1e90f39b4836804eae41a858b3fc5e9, type: 3}
     bg_image_index: 0
   - text: 'Oh dear, I guess I broke you? '
     voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
@@ -1316,17 +1316,17 @@ MonoBehaviour:
   - text: Your death is as swift as your godhood was. You don't care, as you believe
       your soul will reside in the god's realm after death. It's all worth it. It
       was all-
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: c793375d85b4cea4b9a42906f671f81a, type: 3}
     bg_image_index: 0
   - text: Oh you didn't read the fine print did you? I never said anything about
       an afterlife.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 6bd5e3a1b77dda845a94bea982e90405, type: 3}
     bg_image_index: 0
   - text: The god giggles and flicks your soul back to earth- past earth. Down down
       down to a hell filled with the souls you sent there first. Angry, vengeful
       souls, excited to pay you back ten-fold. They cut you open like you did them.
       They eat your still beating heart and relish in your misery for all eternity.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: bf4e4d49be2be8a4da20a8cd0d80870e, type: 3}
     bg_image_index: 1
   next_scene: Main Menu
 --- !u!1 &1473988341
