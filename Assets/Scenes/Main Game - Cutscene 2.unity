@@ -1304,7 +1304,7 @@ MonoBehaviour:
       Your hands are already stained beyond recognition.
     voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
     bg_image_index: 0
-  next_scene: Main Game - Level 2
+  next_scene: Main Game - Level 3
 --- !u!1 &1473988341
 GameObject:
   m_ObjectHideFlags: 0

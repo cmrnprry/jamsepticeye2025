@@ -94,7 +94,7 @@ public class MazeGameManager : MonoBehaviour
             EventSystem.current.RaycastAll(fake_pointer, results);
 			if (results.Count < 1 || results[0].gameObject.name == "Bad Touch")
 			{
-                //BadTouchCollision();
+                BadTouchCollision();
             }
         }
     }
