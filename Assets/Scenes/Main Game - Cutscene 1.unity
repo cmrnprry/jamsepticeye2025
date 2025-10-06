@@ -1291,17 +1291,17 @@ MonoBehaviour:
   - text: Oooh, you managed to parse the contract! Unfortunately, for you, your hard
       work wasn't enough. An addendum was added right before you sent that offering
       to me. It's out of my hands, I'm afraid.
-    voice: {fileID: 8300000, guid: 352d78a34d9f679499fa485c2fcd2cd7, type: 3}
+    voice: {fileID: 8300000, guid: 469f40adbc44ed3418e0e2813156bfa6, type: 3}
     bg_image_index: 0
   - text: You protest, but the god stops you.
-    voice: {fileID: 8300000, guid: c434575b66b1b454590d498ec728d4dd, type: 3}
+    voice: {fileID: 8300000, guid: c4e3a67e49a7afe4f94bc7c0ea547e4f, type: 3}
     bg_image_index: 0
   - text: You did it once, is it really so hard to do it one more time? Besides,
       it's not like you have much of a choice anyway.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: f43421fcf11a3074ab20e556dbda130d, type: 3}
     bg_image_index: 0
   - text: With a laugh, they're gone. The greater good. It's for the greater good.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: f01f38756de50a948a7d27dbd1a30d2c, type: 3}
     bg_image_index: 0
   next_scene: Main Game - Level 2
 --- !u!1 &1473988341

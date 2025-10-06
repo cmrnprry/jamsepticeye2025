@@ -1290,19 +1290,19 @@ MonoBehaviour:
   voice_entries:
   - text: I knew I was right choosing to enter a contract with you! No other ant
       has ever done <i>this</i> well.
-    voice: {fileID: 8300000, guid: 352d78a34d9f679499fa485c2fcd2cd7, type: 3}
+    voice: {fileID: 8300000, guid: a78203740d20a3c448ea1acec5833aca, type: 3}
     bg_image_index: 0
   - text: You blush at the praise. This makes it all worth it. A few sacrifices and
       now you can ascend to-
-    voice: {fileID: 8300000, guid: c434575b66b1b454590d498ec728d4dd, type: 3}
+    voice: {fileID: 8300000, guid: 1c7102e3d16b23c44a3447b6d1bf0ba1, type: 3}
     bg_image_index: 0
   - text: But another addendum was added. The price of this opportunity can never
       be small. You understand, don't you?
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 23bb6dd086d9390489b712572389b030, type: 3}
     bg_image_index: 0
   - text: You squeeze your fists. Fine. At this point, what's a few more deaths?
       Your hands are already stained beyond recognition.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 4967c3ce481447148b7a68fd6eb6f345, type: 3}
     bg_image_index: 0
   next_scene: Main Game - Level 3
 --- !u!1 &1473988341

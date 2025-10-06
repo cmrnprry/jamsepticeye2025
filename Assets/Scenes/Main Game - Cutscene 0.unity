@@ -1289,57 +1289,57 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 45a4ff1277aa8a14bab9bb73c2939bd6, type: 3}
   voice_entries:
   - text: Oh! There you are.
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: dd814075b12f57743bb346b6f928af4b, type: 3}
     bg_image_index: 0
   - text: You drop tools you've been carrying, searching for the sound of the voice.
       It comes from everywhere at once.
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 8daa717b73b653b408beec66c7342f4d, type: 3}
     bg_image_index: 0
   - text: No need to be so on edge. Though I suppose that's my fault, isn't it? But
       you called for me didn't you?
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 1e82a726363aa194e81630748142f73c, type: 3}
     bg_image_index: 0
   - text: Your head spins as you fall to your knees. The god's name leaves your lips.
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 8702c88b7820c98448cabc90dda3458b, type: 3}
     bg_image_index: 0
   - text: Yes! Clever little ant aren't you? I want to make a deal with you. If you
       can do this one *little* thing for me, I can make sure the rest of your life
       is spent in pure bliss. It's a *great*opportunity for you.
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 687edabf0ff5c0844b9e6855aa9ad2fd, type: 3}
     bg_image_index: 0
   - text: I don't ask for much, just a few offerings. But what's a few lives in exchange
       for ascension to a realm of ecstasy behind human comprehension? I do have a...
       particular taste, but it shouldn't be an issue for a smart ant like you~.
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 127f459dd498e74489998324966ea3b2, type: 3}
     bg_image_index: 0
   - text: Just. Sign. here.
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 7f29159140c26c54697465e22178b0ac, type: 3}
     bg_image_index: 0
   - text: A contract appears in front of you. You don't think. You scramble for a
       pen, but they just laugh again.
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 4326cba2716ee224da91a41c183a693b, type: 3}
     bg_image_index: 0
   - text: Oh, don't be silly! We don't use mortal ink for these contracts. You know
       what I mean, don't you?
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 896fc68c28079824d8e62532930bc2a9, type: 3}
     bg_image_index: 0
   - text: You do. You grab a scalpel and cut open your hand, sealing your fate in
       blood.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 67c1fb0bc0486a341a5e7637409aacd5, type: 3}
     bg_image_index: 0
   - text: Marvelous! I'll be waiting for you to hold up your end of the deal. Oh,
       and I don't accept anything that's not written there. Fail too many times and-
       Well, let's hope that doesn't happen.
-    voice: {fileID: 8300000, guid: 0ba11259e077d4841a67c675d9157e15, type: 3}
+    voice: {fileID: 8300000, guid: 56cd9a9e7120d884b82f5c14923f935d, type: 3}
     bg_image_index: 0
   - text: And it's gone as quickly as it appeared. You read the contract, quickly
       searching for what [god name] needs from you. The color drains from your face.
       You're a doctor. You save lives, not take them! How could you possibly...
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 0236548c91a279e4299c22550d3462b9, type: 3}
     bg_image_index: 0
   - text: You shake your head. What's done is done. Their lives will be used for
       the greater good. You should get to work.
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: b2ab9df75b34fdb4bbad6cdcaf90049a, type: 3}
     bg_image_index: 0
   next_scene: Main Game - Level 1
 --- !u!1 &1473988341
