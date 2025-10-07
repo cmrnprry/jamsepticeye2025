@@ -239,6 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033317c0e7cc13d42bce9c7516fdce6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartButton: {fileID: 0}
+  Quit: {fileID: 0}
 --- !u!1001 &112842394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5393,7 +5395,7 @@ PrefabInstance:
     - target: {fileID: 139767781514445228, guid: 4a8dd1ff21b375a44bded3578b6680a5, type: 3}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 1881084985}
+      objectReference: {fileID: 1791602118}
     - target: {fileID: 139767781514445228, guid: 4a8dd1ff21b375a44bded3578b6680a5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -5584,6 +5586,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2472649180439180455, guid: 4a8dd1ff21b375a44bded3578b6680a5, type: 3}
   m_PrefabInstance: {fileID: 1791602116}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1791602118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7121667913552852493, guid: 4a8dd1ff21b375a44bded3578b6680a5, type: 3}
+  m_PrefabInstance: {fileID: 1791602116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1795270799
 GameObject:
   m_ObjectHideFlags: 0
@@ -6025,17 +6038,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15de9382476cb5a4583cc724e796cdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1881084985 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7121667913552852493, guid: 4a8dd1ff21b375a44bded3578b6680a5, type: 3}
-  m_PrefabInstance: {fileID: 1881084982}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1898887306
